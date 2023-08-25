@@ -96,7 +96,10 @@ app.get('/*', (req, res) => {
         }
     }
     const reqUrl=`http://localhost:${PORT}`+req.originalUrl;
-    history.push({reqUrl});
+    if(!isNaN(result)){
+        history.push({reqUrl});
+    }
+    
     if (history.length > 20) {
         history.shift(); 
     }
